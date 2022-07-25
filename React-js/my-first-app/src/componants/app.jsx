@@ -23,7 +23,7 @@ class App extends Component {
         async componentDidMount(){
             //let {data} = await axios.get("https://jsonplaceholder.typicode.com/posts");
             let { data } = await axios.get(
-                "http://localhost:3000/details"
+                "http://localhost:3003/details"
             );
             this.setState({details :data});
             

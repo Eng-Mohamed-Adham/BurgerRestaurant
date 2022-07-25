@@ -8,7 +8,7 @@ class ProductForm extends Component {
     const id = this.props.match.params.id;
     if (id !== "new") {
       const { data } = await axios.get(
-        "http://localhost:3000/details/" + id
+        "http://localhost:3003/details/" + id
       );
       //Clone
       const state = { ...this.state };
@@ -33,7 +33,7 @@ class ProductForm extends Component {
         //Generate the id ==> To use Firebase Database ==> In Lecture we use JSON-SERVER
         // id: this.props.products[this.props.products.length - 1].id + 1,
       };
-      await axios.post("http://localhost:3000/details/", obj);
+      await axios.post("http://localhost:3003/details/", obj);
     } else {
       //EDit
       const obj = {
@@ -45,7 +45,7 @@ class ProductForm extends Component {
       delete obj.id;
 
       await axios.put(
-        "http://localhost:3000/details/" + this.state.id,
+        "http://localhost:3003/details/" + this.state.id,
         obj
       );
     }
